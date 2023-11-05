@@ -1,0 +1,310 @@
+* {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  width: 100%;
+  box-sizing: border-box;
+}
+html {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+/* toda la pagina container*/
+.container {
+  display: grid; 
+  grid-template-columns: 11% 89%;
+  grid-template-rows: auto auto auto auto auto auto;
+  grid-template-areas:
+    "menu header"
+    "menu section"
+    "menu section"
+    "menu productos"
+    "menu number"
+    "footer footer";
+  height: 100vh;
+  background-color: #b4c1e1;
+}
+
+/* el header*/
+
+.header {
+  display: flex;
+  flex-direction: column;
+  grid-area: header;
+  background-color: #9568a9;
+  color: blueviolet;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+.header h2 {
+  text-align: center;
+  margin: auto;
+  color: rgb(226, 201, 249);
+}
+
+.header .button {
+  display: flex;
+  background-color: white;
+  color: blueviolet;
+  width: 80%;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+}
+.foto-header {
+  grid-area: foto-header;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+/* menu*/
+.menu {
+  grid-area: menu;
+  display: flex;
+  flex-direction: column;
+  background-color: #aebfeb;
+  align-items: center;
+}
+.datos {
+  display: flex;
+  flex-direction: column;
+  background-color: #aebfeb;
+  align-items: center;
+  text-align: center;
+}
+.menu .logo {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu h3 {
+  margin: 10px;
+  font-size: 25px;
+}
+.menu a {
+  margin: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+/* historia*/
+section {
+  grid-area: section;
+  display: flex;
+  flex-direction: column;
+}
+
+section article {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+section .parrafo {
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin-top: 20px;
+}
+
+section img {
+  width: 50vw;
+  background-size: cover;
+  padding: 10px;
+}
+section .casa {
+  width: 25%;
+  margin: 10px;
+}
+
+section h2 {
+  text-align: center;
+}
+
+/* Producto las cajas*/
+.productos {
+  grid-area: productos;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cajas {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 350px;
+  height: 450px;
+  background-color: #9568a9;
+  flex-wrap: wrap;
+  margin: 20px;
+  border-radius: 5px;
+  background-size: cover;
+}
+.cajas img {
+  margin-top: 20px;
+  width: 250px;
+  height: 150px;
+  border-radius: 5px;
+  transition: 2s;
+}
+.cajas:hover img {
+  width: 300px;
+  height: 200px;
+}
+.contenido {
+  text-align: center;
+}
+
+.contenido .p1 {
+  font-size: 25px;
+}
+
+.cajas button {
+  width: 40%;
+  border: none;
+  padding: 15px;
+  background-color: #8052b4;
+  color: rgb(226, 201, 249);
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  border-width: 10px;
+  margin: 15px;
+  transition: 1s;
+}
+.cajas:hover button {
+  background-color: #ffc5c9;
+  color: aliceblue;
+}
+
+/* los numeros del pie de cajas*/
+.number {
+  grid-area: number;
+  background-color: #b4c1e1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 30px;
+  margin: 3px;
+}
+
+.number .numero {
+  background-color: #8052b4;
+  color: rgb(226, 201, 249);
+  height: 20px;
+  width: 20px;
+  margin: 3px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+}
+/* pie de pagina*/
+.footer {
+  display: flex;
+  grid-area: footer;
+  background-color: #8052b4;
+  color: blueviolet;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+.footer .logo {
+  display: flex;
+  justify-content: center;
+}
+.footer .logo img {
+  width: 30px;
+  height: 30px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.footer h3 {
+  display: grid;
+  text-align: center;
+  margin: auto;
+  color: rgb(226, 201, 249);
+}
+
+/* version movil*/
+
+@media screen and (max-width: 576px) {
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+      "menu"
+      "header"
+      "section"
+      "productos"
+      "number"
+      "footer";
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  section article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section .parrafo {
+    width: 80%;
+  }
+
+  section img {
+    width: 100%;
+  }
+  section .casa{
+    width: 80%;
+    align-items: center;
+  }
+
+  .productos {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 65vh;
+  }
+
+  .datos {
+    display: none;
+    background-color: blueviolet;
+  }
+  .menu {
+    display: flex;
+    flex-direction: row;
+  }
+  .menu .icono {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+}
+
+@media screen and (min-width: 577px) {
+  .menu .icono {
+    display: none;
+  }
+}
